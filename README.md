@@ -32,7 +32,7 @@ Furthermore, the conversion rate has also significantly increased for test group
 
 Considering the observed statistically significant growth in the target metrics, it is recommended to deploy the new profile search system for all users in commercial operation.
 
-For visualisation please refer to the JupiterNotebook - https://github.com/AleksandrVinnik/DataAnalysys/blob/main/Dating%20Application%20A%3AB%20Tests/Dating_Application_A%3AB_Tests.ipynb
+For details and visualisation please refer to the JupiterNotebook - https://github.com/AleksandrVinnik/Dating_Application_A-B_Tests/blob/main/Dating_Application_A:B_Tests.ipynb
 
 
 
