@@ -1,5 +1,6 @@
 # Dating_Application_A-B_Tests
- Repository of my educational work for the course "Data Analyst" at Karpov.Courses - © https://karpov.courses/analytics
+
+Repository of my educational work for the course "Data Analyst" at Karpov.Courses - © https://karpov.courses/analytics
 
 ● Project description: 
 
@@ -32,8 +33,7 @@ Furthermore, the conversion rate has also significantly increased for test group
 
 Considering the observed statistically significant growth in the target metrics, it is recommended to deploy the new profile search system for all users in commercial operation.
 
-For details and visualisation please refer to the JupiterNotebook - https://github.com/AleksandrVinnik/Dating_Application_A-B_Tests/blob/d1cb0923204efb5259d0c6f6f61560d2ec64cbf6/Dating_Application_A%3AB_Tests.ipynb
-
+For details and visualisation please refer to the JupiterNotebook.
 
 
 ● References to the used sources:
