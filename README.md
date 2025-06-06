@@ -12,17 +12,18 @@ This project includes the full workflow for analyzing A/B test data, including s
 
 ```mermaid
 flowchart TD
-    A[📥 Load Data] --> B[🧹 Clean & Inspect Data]
-    B --> C[🔍 Check Group Sizes & Conversion Rates]
-    C --> D[📈 Plot Distributions (KDE, Boxplot)]
-    D --> E[🧪 Normality Test (Shapiro-Wilk)]
-    E --> F[🎯 Variance Homogeneity Test (Levene's)]
+    A[Load Data] --> B[Clean & Inspect Data]
+    B --> C[Check Group Sizes & Conversion Rates]
+    C --> D[Plot Distributions (KDE, Boxplot)]
+    D --> E[Normality Test (Shapiro-Wilk)]
+    E --> F[Variance Homogeneity Test (Levene's)]
     F --> G{Test Type Decision}
-    G -->|Normal + Equal Variance| H[t-test]
+    G -->|Normal & Equal Variance| H[t-test]
     G -->|Not Normal or Unequal Variance| I[Mann-Whitney U Test]
-    H --> J[📉 Compute p-value & Effect Size]
+    H --> J[Compute p-value & Effect Size]
     I --> J
-    J --> K[✅ Interpret Results]
+    J --> K[Interpret Results]
+
 
 ## 🔍 Key Findings
 
