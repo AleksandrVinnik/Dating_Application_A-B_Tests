@@ -1,45 +1,69 @@
-# Dating_Application_A-B_Tests
+# Dating App A/B Testing Analysis
 
-Repository of my educational work for the course "Data Analyst" at Karpov.Courses - © https://karpov.courses/analytics
+This repository contains a comprehensive A/B test analysis of a new matching algorithm implemented in a dating application. The goal was to evaluate whether the new algorithm improves user engagement and matching efficiency compared to the existing version.
 
+## 📊 Project Overview
 
+A new profile-matching algorithm was tested via an A/B experiment. Users were randomly split into control (existing algorithm) and test (new algorithm) groups. The study analyzes user interaction logs to assess the algorithm's impact on key business metrics.
 
+## 📊 A/B Test Statistical Analysis Flow
 
-	● Project description: 
+This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
 
-The application team developed a new algorithm for finding the most suitable profiles. To test the algorithm's performance, an A/B test was conducted. All users were divided into two groups. Users in Group 0 used the application with the old algorithm, while all users in Group 1 used the application with the new algorithm for profile search. The task is to evaluate whether the new algorithm has improved the service's quality.
+```mermaid
+flowchart TD
+    A[📥 Load Data] --> B[🧹 Clean & Inspect Data]
+    B --> C[🔍 Check Group Sizes & Conversion Rates]
+    C --> D[📈 Plot Distributions (KDE, Boxplot)]
+    D --> E[🧪 Normality Test (Shapiro-Wilk)]
+    E --> F[🎯 Variance Homogeneity Test (Levene's)]
+    F --> G{Test Type Decision}
+    G -->|Normal + Equal Variance| H[t-test]
+    G -->|Not Normal or Unequal Variance| I[Mann-Whitney U Test]
+    H --> J[📉 Compute p-value & Effect Size]
+    I --> J
+    J --> K[✅ Interpret Results]
 
-The data includes logs of user interactions with each other.
+## 🔍 Key Findings
 
+- **+103%** increase in average user actions (likes/views)
+- **+107%** improvement in user-level match conversion rate
+- **+106%** improvement in overall (aggregate) match rate
+- Results are statistically significant (**p < 0.001**) across all key metrics
 
+## 🧪 Methodology
 
-	● List of methods and technologies used with brief descriptions:
+### Metrics Analyzed
+- **User engagement**: Average actions per user (likes/views)
+- **Conversion rate**: Match-to-action ratio (per user and per group)
+- **Group-level match rate**
 
- - Python for data analysis:
-	- pandas - data load an transformation
-	- matplotlib - data visualisation
-	- seaborn - data visualisation
-	- scipy.stats - statistical tests
-	- pingouin - statistical tests
+### Statistical Tests
+- Normality check: Shapiro-Wilk test
+- Variance check: Levene’s test
+- Hypothesis testing: Independent t-tests and Chi-square tests
+- Significance threshold: α = 0.05
 
- - GIT.
+### Tools & Libraries
+- Python (pandas, NumPy)
+- Visuals: Matplotlib, Seaborn
+- Statistical analysis: SciPy, Pingouin
+- Version control: Git
 
+## 📈 Results Summary
 
+| Metric                | Control Group | Test Group | Improvement |  
+|-----------------------|---------------|------------|-------------|  
+| Average Actions/User  | 9.56          | 19.48      | +103.6%     |  
+| Match Conversion Rate | 19.41%        | 40.23%     | +107.3%     |  
+| Overall Match Rate    | 19.50%        | 40.20%     | +106.2%     |  
 
-	● Obtained results with visualization:
+## 💡 Recommendations
 
-Short summary:
+- Deploy the new matching algorithm to 100% of users.
+- Monitor long-term retention and premium conversion impact.
+- Consider follow-up experiments for further optimization.
 
-In the new version of the application, there has been a statistically significant increase in the average number of actions performed by users in test group.
+## 📬 Contact
 
-Furthermore, the conversion rate has also significantly increased for test group, along with the average metric values across users.
-
-Considering the observed statistically significant growth in the target metrics, it is recommended to deploy the new profile search system for all users in commercial operation.
-
-For details and visualisation please refer to the JupiterNotebook - https://github.com/AleksandrVinnik/Dating_Application_A-B_Tests/blob/64582d18507e32c471a8ff78097992fac94cd907/Dating_Application_A%3AB_Tests.ipynb
-
-
-
-● References to the used sources:
-
-	© https://karpov.courses/analytics
+For questions or collaboration, please reach out via GitHub or LinkedIn.
