@@ -13,25 +13,26 @@ This project includes the full workflow for analyzing A/B test data, including s
 
 ```mermaid
 flowchart TD
-    A[📥 Load Data (CSV/Parquet)] --> B[🧹 Clean & Inspect Data (Nulls, Types)]
-    B --> C[📊 Check Group Sizes & Conversion Rates]
-    C --> D[📈 Visualize Distributions (KDE, Boxplot)]
-    D --> E[🧪 Test Normality (Shapiro-Wilk)]
-    E --> F[⚖️ Test Variance Homogeneity (Levene’s Test)]
-    F --> G{📌 Choose Statistical Test}
+    A[Load Data (CSV/Parquet)] --> B[Clean & Inspect Data (Nulls, Types)]
+    B --> C[Check Group Sizes & Conversion Rates]
+    C --> D[Visualize Distributions (KDE, Boxplot)]
+    D --> E[Test Normality (Shapiro-Wilk)]
+    E --> F[Test Variance Homogeneity (Levene’s Test)]
+    F --> G{Choose Statistical Test}
     
-    G -->|Normal + Equal Variance| H1[t-test: Avg Actions/User 🧍‍♂️]
-    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U: Avg Actions/User 🧍‍♀️]
+    G -->|Normal + Equal Variance| H1[t-test: Avg Actions/User]
+    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U: Avg Actions/User]
     
-    G -->|Binary Outcome| I1[Chi-square: Match Conversion Rate 💘]
-    G -->|Binary Outcome| I2[Chi-square: Group-level Match Rate 🌍]
+    G -->|Binary Outcome| I1[Chi-square: Match Conversion Rate]
+    G -->|Binary Outcome| I2[Chi-square: Group-level Match Rate]
     
-    H1 --> J[📉 Compute p-value & Cohen’s d]
+    H1 --> J[Compute p-value & Cohen’s d]
     H2 --> J
     I1 --> J
     I2 --> J
 
-    J --> K[✅ Interpret Results: Significance & Direction 😎]
+    J --> K[Interpret Results: Significance & Direction]
+
 ```
 
 
