@@ -2,9 +2,13 @@
 
 This repository contains a comprehensive A/B test analysis of a new matching algorithm implemented in a dating application. The goal was to evaluate whether the new algorithm improves user engagement and matching efficiency compared to the existing version.
 
+---
+
 ## 📊 Project Overview
 
 A new profile-matching algorithm was tested via an A/B experiment. Users were randomly split into control (existing algorithm) and test (new algorithm) groups. The study analyzes user interaction logs to assess the algorithm's impact on key business metrics.
+
+---
 
 ## 📊 A/B Test Statistical Analysis Flow
 
@@ -26,12 +30,16 @@ flowchart TD;
     I --> J;
 ```
 
+---
+
 ## 🔍 Key Findings
 
 - **+103%** increase in average user actions (likes/views)
 - **+107%** improvement in user-level match conversion rate
 - **+106%** improvement in overall (aggregate) match rate
 - Results are statistically significant (**p < 0.001**) across all key metrics
+
+---
 
 ## 🧪 Methodology
 
@@ -52,6 +60,8 @@ flowchart TD;
 - Statistical analysis: SciPy, Pingouin
 - Version control: Git
 
+---
+
 ## 📈 Results Summary
 
 | Metric                | Control Group | Test Group | Improvement |  
@@ -60,12 +70,28 @@ flowchart TD;
 | Match Conversion Rate | 19.41%        | 40.23%     | +107.3%     |  
 | Overall Match Rate    | 19.50%        | 40.20%     | +106.2%     |  
 
+---
+
 ## 💡 Recommendations
 
 - Deploy the new matching algorithm to 100% of users.
 - Monitor long-term retention and premium conversion impact.
 - Consider follow-up experiments for further optimization.
 
-## 📬 Contact
+---
 
-For questions or collaboration, please reach out via GitHub or LinkedIn.
+## 📘 Full Analysis Notebook
+
+For a comprehensive, step-by-step analysis of the A/B testing case, including data exploration, visualization, hypothesis testing, and final recommendations, please refer to the full Jupyter Notebook:
+
+**👉 [Dating_Application_A/B_Tests.ipynb](Dating_Application_A/B_Tests.ipynb)**
+
+This notebook presents:
+
+- A real-world scenario simulating an online dating application's algorithm evaluation.
+- Well-defined business metrics (user actions, conversion rates).
+- Data visualization to illustrate group differences.
+- Hypothesis formulation and statistical tests (t-test, chi-squared).
+- Clear, data-driven conclusions on the effectiveness of the new matching algorithm.
+
+The analysis is based on a dataset provided by [Karpov.Courses](https://karpov.courses/analytics) and demonstrates a practical approach to applying A/B testing methodologies in digital product optimization.
