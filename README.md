@@ -11,22 +11,20 @@ A new profile-matching algorithm was tested via an A/B experiment. Users were ra
 This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
 
 ```mermaid
-flowchart TD
-    A[Load Data] --> B[Clean & Inspect Data]
-    B --> C[Calculate Key Metrics]
-    C --> D[Visualize Distributions]
-    D --> E[Test Normality]
-    E --> F[Test Variance Homogeneity]
-    F --> G{Choose Statistical Test}
-    
-    G -->|Normal + Equal Variance| H1[t-test]
-    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U]
-    G -->|Binary Outcome| I[Chi-square Test]
-    
-    H1 --> J[Interpret Results]
-    H2 --> J
-    I --> J
-
+flowchart TD;
+    A[Load Data] --> B[Clean & Inspect Data];
+    B --> C[Calculate Key Metrics];
+    C --> D[Visualize Distributions];
+    D --> E[Test Normality];
+    E --> F[Test Variance Homogeneity];
+    F --> G{Choose Statistical Test};
+    G -->|Normal + Equal Variance| H1[t-test];
+    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U];
+    G -->|Binary Outcome| I[Chi-square Test];
+    H1 --> J[Interpret Results];
+    H2 --> J;
+    I --> J;
+```
 
 ## 🔍 Key Findings
 
