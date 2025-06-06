@@ -9,8 +9,8 @@ A new profile-matching algorithm was tested via an A/B experiment. Users were ra
 ## 📊 A/B Test Statistical Analysis Flow
 
 This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
-## 📊 A/B Test Statistical Analysis Flow
 
+```mermaid
 flowchart TD
     A[Load Data] --> B[Clean & Inspect Data]
     B --> C[Calculate Key Metrics]
