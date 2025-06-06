@@ -11,29 +11,21 @@ A new profile-matching algorithm was tested via an A/B experiment. Users were ra
 This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
 ## 📊 A/B Test Statistical Analysis Flow
 
-```mermaid
 flowchart TD
-    A[Load Data (CSV/Parquet)] --> B[Clean & Inspect Data (Nulls, Types)]
-    B --> C[Check Group Sizes & Conversion Rates]
-    C --> D[Visualize Distributions (KDE, Boxplot)]
-    D --> E[Test Normality (Shapiro-Wilk)]
-    E --> F[Test Variance Homogeneity (Levene’s Test)]
+    A[Load Data] --> B[Clean & Inspect Data]
+    B --> C[Calculate Key Metrics]
+    C --> D[Visualize Distributions]
+    D --> E[Test Normality]
+    E --> F[Test Variance Homogeneity]
     F --> G{Choose Statistical Test}
     
-    G -->|Normal + Equal Variance| H1[t-test: Avg Actions/User]
-    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U: Avg Actions/User]
+    G -->|Normal + Equal Variance| H1[t-test]
+    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U]
+    G -->|Binary Outcome| I[Chi-square Test]
     
-    G -->|Binary Outcome| I1[Chi-square: Match Conversion Rate]
-    G -->|Binary Outcome| I2[Chi-square: Group-level Match Rate]
-    
-    H1 --> J[Compute p-value & Cohen’s d]
+    H1 --> J[Interpret Results]
     H2 --> J
-    I1 --> J
-    I2 --> J
-
-    J --> K[Interpret Results: Significance & Direction]
-
-```
+    I --> J
 
 
 ## 🔍 Key Findings
