@@ -9,20 +9,30 @@ A new profile-matching algorithm was tested via an A/B experiment. Users were ra
 ## 📊 A/B Test Statistical Analysis Flow
 
 This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
+## 📊 A/B Test Statistical Analysis Flow
 
 ```mermaid
 flowchart TD
-    A[Load Data] --> B[Clean & Inspect Data]
-    B --> C[Check Group Sizes & Conversion Rates]
-    C --> D[Plot Distributions (KDE, Boxplot)]
-    D --> E[Normality Test (Shapiro-Wilk)]
-    E --> F[Variance Homogeneity Test (Levene's)]
-    F --> G{Test Type Decision}
-    G -->|Normal & Equal Variance| H[t-test]
-    G -->|Not Normal or Unequal Variance| I[Mann-Whitney U Test]
-    H --> J[Compute p-value & Effect Size]
-    I --> J
-    J --> K[Interpret Results]
+    A[📥 Load Data (CSV/Parquet)] --> B[🧹 Clean & Inspect Data (Nulls, Types)]
+    B --> C[📊 Check Group Sizes & Conversion Rates]
+    C --> D[📈 Visualize Distributions (KDE, Boxplot)]
+    D --> E[🧪 Test Normality (Shapiro-Wilk)]
+    E --> F[⚖️ Test Variance Homogeneity (Levene’s Test)]
+    F --> G{📌 Choose Statistical Test}
+    
+    G -->|Normal + Equal Variance| H1[t-test: Avg Actions/User 🧍‍♂️]
+    G -->|Non-Normal or Unequal Variance| H2[Mann-Whitney U: Avg Actions/User 🧍‍♀️]
+    
+    G -->|Binary Outcome| I1[Chi-square: Match Conversion Rate 💘]
+    G -->|Binary Outcome| I2[Chi-square: Group-level Match Rate 🌍]
+    
+    H1 --> J[📉 Compute p-value & Cohen’s d]
+    H2 --> J
+    I1 --> J
+    I2 --> J
+
+    J --> K[✅ Interpret Results: Significance & Direction 😎]
+```
 
 
 ## 🔍 Key Findings
