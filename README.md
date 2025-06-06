@@ -93,5 +93,3 @@ This notebook presents:
 - Data visualization to illustrate group differences.
 - Hypothesis formulation and statistical tests (t-test, chi-squared).
 - Clear, data-driven conclusions on the effectiveness of the new matching algorithm.
-
-The analysis is based on a dataset provided by [Karpov.Courses](https://karpov.courses/analytics) and demonstrates a practical approach to applying A/B testing methodologies in digital product optimization.
