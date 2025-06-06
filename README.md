@@ -10,7 +10,7 @@ A new profile-matching algorithm was tested via an A/B experiment. Users were ra
 
 ---
 
-## 📊 A/B Test Statistical Analysis Flow
+## ⚙️ Pipeline Overview
 
 This project includes the full workflow for analyzing A/B test data, including sanity checks, assumptions validation, and appropriate test selection.
 
